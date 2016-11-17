@@ -1,0 +1,26 @@
+﻿@model DropDownListUsingHtmlHelper.Models.Student
+
+@*Four different ways to roughly show the same thing:*@
+
+@Html.DropDownList("StudentGender",
+                    new SelectList(Enum.GetValues(typeof(DropDownListUsingHtmlHelper.Models.Gender))),
+                    "Select Gender",
+                    new { @class = "form-control" })
+
+<select class="form-control" id="StudentGender" name="StudentGender">
+    <option>Select Gender</option>
+    <option>Male</option>
+    <option>Female</option>
+</select>
+
+@Html.DropDownListFor(m => m.StudentGender,
+                    new SelectList(Enum.GetValues(typeof(DropDownListUsingHtmlHelper.Models.Gender))),
+                    "Select Gender")
+
+
+<select class="form-control" id="StudentGender" name="StudentGender">
+    <option>Select Gender</option>
+    <option>Male</option>
+    <option>Female</option>
+</select>
+
